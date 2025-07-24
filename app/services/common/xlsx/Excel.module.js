@@ -29,13 +29,11 @@
 let Excel = {}
 
 if (process.client) {
+    const xlsxPromise = import('./XLSX.min.js');
 
-    let src = import("./XLSX.min.js")
-    
-    let script = document.createElement("script")
-    script.src = src
-    document.head.appendChild(script)
-    Excel.make = function (sheetArr, fileName) {
+    Excel.make = async function (sheetArr, fileName) {
+        await xlsxPromise;
+        
         // eslint-disable-next-line no-undef
         let wb = XLSX.utils.book_new()
         wb.Props = {

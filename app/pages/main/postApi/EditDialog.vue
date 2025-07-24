@@ -809,9 +809,9 @@ const saveData = () => {
     })
 }
 // 해당 Api의 문서를 excel 파일로 다운로드 한다.
-const excelDownload = () => {
+const excelDownload = async () => {
     console.log('excelDownload data', ruleForm.value)
-    makeApiExcelAndDownload(ruleForm.value, ruleForm.value.interfaceName, 'api excel')
+    await makeApiExcelAndDownload(ruleForm.value, ruleForm.value.interfaceName, 'api excel')
 }
 
 // 파일 업로드 

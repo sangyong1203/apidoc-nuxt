@@ -298,7 +298,7 @@ const deleteApi = () => {
 const excelDownloadAll = async () => {
     await obj.getCoverPage()
     await obj.getHistoryList()
-    makeApiExcelAndDownloadAll(obj.coverPageInfo, obj.historyList, selectedApi.value, 'api excel')
+    await makeApiExcelAndDownloadAll(obj.coverPageInfo, obj.historyList, selectedApi.value, 'api excel')
 }
 
 // 개정이력 창

@@ -10,7 +10,7 @@ import type { CoverPage, RequestType,  ResponseType } from './Type'
  * @example
  * 예: makeExcelAndDownload(apiData, '사용자목록 조회', '사용자목록엑셀파일')
  */
-export const makeApiExcelAndDownload = (apiData: any, title: string,  fileName: string) => {
+export const makeApiExcelAndDownload = async (apiData: any, title: string,  fileName: string) => {
     const requestList:RequestType[] = apiData.request ?? []
     const responseList:ResponseType[] = apiData.response ?? []
 
@@ -168,7 +168,7 @@ type RevisionHistory = {
     reviewer: string
     approver: string
 }
-export const makeApiExcelAndDownloadAll = (coverPage:CoverPage, historyList:RevisionHistory[] ,apiDataList: any,  fileName: string) => {
+export const makeApiExcelAndDownloadAll = async (coverPage:CoverPage, historyList:RevisionHistory[] ,apiDataList: any,  fileName: string) => {
     
     // --------------sheet style ---------------------
     const emptyColumnStyle = {

@@ -6,7 +6,7 @@
             </div>
         </div>
         <div class="text-right">
-            <el-button :size="size" type="primary" icon="search" class="GET" @click="onSearch()">검색</el-button>
+            <el-button :size="size" type="primary" class="GET" @click="onSearch()"><el-icon><Search/></el-icon> 검색</el-button>
         </div>
     </div>
     <el-row class="extra-row" v-show="extra">
@@ -15,6 +15,7 @@
 </template>
 
 <script lang="ts" setup>
+import { Search } from '@element-plus/icons-vue';
 export interface Props {
     extra?: boolean
     size?: '' | 'default' | 'small' | 'large'
