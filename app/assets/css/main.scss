@@ -1,0 +1,495 @@
+@charset "utf-8";
+/* @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap'); */
+
+@import url('./tui-grid.css');
+@import url('./font.css');
+@import url('./dark-mode.scss');
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    font-size: 1.6vh;
+    font-family: 'Pretendard';
+}
+
+@media screen and (max-height: 600px) {
+  *,
+  *::before,
+  *::after {
+      font-size: 2vh;
+  }
+}
+
+#__nuxt,
+body {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  outline: 0;
+  height: 100vh;
+}
+
+:root {
+    /*-------기본 폰트 싸이즈-------*/
+    --font24: 24px;
+    --font20: 20px;
+    --font18: 18px;
+    --font16: 16px;
+    --font14: 14px;
+    --font12: 12px;
+    --font10: 10px;
+
+    /*-------기본 컬러-------*/
+    /*주요컬러*/
+    --color-main: #2b8551;
+    --color-main20: #2b855148;
+    --color-main40: #2b855167;
+    --color-main60: #2b855191;
+
+    /*보조컬러*/
+    --color-blue: #4ca5d7;
+    --color-green: #56ba64;
+    --color-orange: #f19c4d;
+    --color-red: #f96060;
+
+    /*기본컬러*/
+    --color-gray: #333333;
+    --color-gray30: #3333334d;
+    --color-gray-dark: #1c1c1c;
+    --color-gray-light: #d3d3d3;
+    --color-gray-lighter: #f5f5f5;
+    --color-white: #ffffff;
+    --color-black: #000000;
+    
+
+    /*---------폰트컬러-----------*/
+    --text-color-main: var(--color-main);
+    --text-color-black: var(--color-gray-dark);
+    --text-color-white: var(--color-white);
+    --text-color-gray: var(--color-gray);
+
+    /*-------기능별 컬러 설정------*/
+    --main-page-bg-color: var(--color-gray-lighter);
+    --border-color: #e9e9e9;
+    --label-text-color: var(--text-color-black);
+    --menu-bg-color: var(--color-black);
+    --menu-item-color: var(--color-gray-dark);
+    --menu-hover-bg-color: var(--color-main20);
+    --menu-hover-sub-bg-color: var(--color-main20);
+    --memu-activate-color: var(--color-main);
+    --menu-sub-bg-color: var(--color-gray-dark);
+    --menu-sub-text-color: var(--text-color-white);
+    --menu-sub-active-color: var(--color-main);
+    --table-th-bg-color: var(--color-gray-lighter);
+    --table-th-text-color: var(--text-color-black);
+    --popperOption-li-bg-color: var(--color-main20);
+    --popperOption-li-text-color: var(--text-color-white);
+    --checkbox-color: var(--color-black);
+    --radio-color: var(--color-black);
+    --radio-text-color: var(--text-color-black);
+    --radio-checked-color: var(--color-main);
+    --button-primary-bg-color: var(--color-main);
+    --button-primary-hover-bg-color: var(--color-main);
+    --button-primary-hover-border-color: var(--color-main);
+    --button-primary-active-bg-color: var(--color-main60);
+    --button-primary-active-border-color: var(--color-main);
+    --button-primary-text-color: var(--text-color-white);
+    // --button-disabled-bg-color: var(--color-main);
+    // --button-disabled-border-color: #eeeeee;
+    // --button-disabled-text-color: var(--color-main40);
+    --messageBox-button-hover-bg-color: var(--color-black);
+    --messageBox-button-hover-text-color: var(--text-color-main);
+    --messageBox-button-bg-color: var(--color-black);
+    --messageBox-button-text-color: var(--text-color-white);
+    --pager-active-text-color: var(--text-color-white);
+    --pager-active-bg-color: var(--color-main);
+    --tabs-header-bg-color: white;
+    --searchBox-bg-color: var(--color-gray-lighter);
+    
+    /* element-plus 컬러 설정 */
+    --el-color-primary: var(--color-main) !important;
+
+}
+
+h1,
+h1 > * {
+    font-size: 2em;
+}
+h2 {
+    font-size: 1.5em;
+}
+h3 {
+    font-size: 1.17em;
+}
+h5 {
+    font-size: 0.83em;
+}
+h6 {
+    font-size: 0.67em;
+}
+strong {
+    font-weight: bold;
+}
+
+.el-menu {
+    --el-menu-bg-color: var(--menu-bg-color);
+    --el-menu-hover-bg-color: var(--menu-hover-bg-color) !important;
+}
+.el-menu-item {
+    --el-menu-text-color: var(--menu-sub-text-color);
+    --el-menu-active-color: var(--menu-sub-active-color);
+}
+.el-sub-menu .el-menu-item:hover {
+    background: var(--menu-hover-sub-bg-color);
+}
+.el-sub-menu__title {
+    --el-menu-text-color: var(--menu-sub-text-color);
+    --el-menu-active-color: var(--menu-sub-active-color);
+}
+.el-sub-menu__title:hover {
+    --el-menu-hover-bg-color: var(--menu-hover-bg-color);
+}
+.el-sub-menu .el-menu-item {
+    background: var(--menu-sub-bg-color);
+}
+.el-drawer {
+    --el-drawer-bg-color: var(--dashboar-menu-bg-color) !important;
+}
+
+/*--------공통양식--------*/
+/* el-table 공통양식*/
+.el-table {
+    width: 100%;
+    flex: 1;
+    overflow-y: scroll !important;
+}
+.el-table .cell {
+    text-align: center;
+}
+.el-table th.el-table__cell {
+    background-color: var(--table-th-bg-color) !important;
+    height: 60px;
+}
+.el-table thead th .cell {
+    color: var(--table-th-text-color);
+    font-weight: 500;
+}
+.el-table__empty-block {
+    width: 100% !important;
+}
+.el-table__row .align-center .cell {
+    display: flex;
+    justify-content: center;
+}
+.el-table__row .align-left .cell {
+    display: flex;
+    justify-content: left;
+}
+.el-table__row .align-right .cell {
+    display: flex;
+    justify-content: right;
+}
+.el-table.no-border {
+    --el-table-border-color: transparent;
+    .el-table__cell {
+        border-bottom: 1px solid var(--border-color) !important;
+    }
+}
+.el-table__empty-text{
+    width: 100% !important;
+    height: 100% !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.el-table__column-filter-trigger {
+    margin-left: 4px;
+    margin-right: -8px;
+}
+/* ------For el-table selection's checkbox 'all' display or not*-------*/
+.el-table[multiple] {
+    .el-table__header-wrapper .el-table-column--selection > .cell {
+        display: flex !important;
+    }
+}
+.el-table__header-wrapper .el-table-column--selection > .cell {
+    display: none !important;
+}
+/*-----------------------------------------*/
+/* el-dialog 공통양식 */
+.el-dialog {
+    display: flex;
+    flex-direction: column;
+    --el-dialog-border-radius: 8px !important;
+    padding: 32px !important;
+}
+.el-dialog .el-dialog__header {
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 12px;
+}
+.el-dialog .el-dialog__body {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    overflow-x: hidden;
+    padding: 24px 16px;
+}
+.el-dialog__footer {
+    border-top: 1px solid var(--border-color);
+}
+.alarm-dialog .el-dialog__header {
+    padding-bottom: 0;
+}
+
+/* 대시보드 Dropdown list poper css */
+.popperOption {
+    background: #000000c9 !important;
+    border: none !important;
+    box-shadow: 0px 3px 8px #000000;
+    li {
+        color: #dddddd;
+    }
+    li span {
+        font-size: var(--font12) !important;
+    }
+    li.is-selected {
+        background-color: var(--popperOption-li-bg-color);
+    }
+    li.is-hovering {
+        background-color: var(--popperOption-li-bg-color);
+    }
+    li:hover {
+        background-color: var(--popperOption-li-bg-color);
+    }
+    .el-popper__arrow:before {
+        background: #000000c9 !important;
+        border: none !important;
+    }
+    .el-select-dropdown__item {
+        height: 30px;
+        color: var(--popperOption-li-text-color) !important;
+    }
+}
+
+/* .el-checkbox 공통양식 */
+.el-checkbox {
+    --el-checkbox-input-border-color-hover: var(--checkbox-color) !important;
+}
+.el-checkbox__input.is-indeterminate .el-checkbox__inner,
+.el-checkbox__input.is-checked .el-checkbox__inner {
+    background-color: var(--checkbox-color) !important;
+    border-color: var(--checkbox-color) !important;
+}
+/* .el-radio 공통양식 */
+.el-radio__input.is-checked .el-radio__inner {
+    background-color: var(--radio-color) !important;
+    border-color: var(--radio-color) !important;
+}
+.el-radio__input.is-checked + .el-radio__label {
+    color: var(--radio-text-color) !important;
+}
+.el-radio.is-bordered.is-checked {
+    background: var(--color-main) !important;
+}
+/* .el-button 공통양식 */
+.el-button {
+    padding: 8px 16px 10px 16px !important;
+    line-height: normal !important;
+}
+.el-button--primary {
+    --el-button-bg-color: var(--button-primary-bg-color) !important;
+    --el-button-hover-bg-color: var(--button-primary-hover-bg-color) !important;
+    --el-button-hover-border-color: var(--button-primary-hover-border-color) !important;
+    --el-button-active-bg-color: var(--button-primary-active-bg-color) !important;
+    --el-button-active-border-color: var(--button-primary-active-border-color) !important;
+    --el-button-text-color: var(--button-primary-text-color) !important;
+    // border:none !important;
+}
+.el-button.is-disabled {
+    --el-button-disabled-bg-color: var(--button-disabled-bg-color);
+    --el-button-disabled-border-color: var(--button-disabled-border-color);
+    --el-button-disabled-text-color: var(--button-disabled-text-color);
+}
+.el-button--info.is-plain{
+    --el-button-text-color: var(--text-color-black) !important;
+}
+
+/* .el-message-box 공통양식 */
+.el-message-box__content {
+    border-top: 1px solid var(--border-color);
+    padding: 16px 8px;
+}
+.el-message-box__message {
+    font-size: 14px;
+}
+.el-message-box__btns {
+    .el-button--primary:hover {
+        background-color: var(--messageBox-button-hover-bg-color);
+        color: var(--messageBox-button-hover-text-color);
+    }
+    .el-button--primary {
+        background-color: var(--messageBox-button-bg-color);
+        color: var(--messageBox-button-text-color);
+    }
+}
+.el-alert__title {
+    display: flex;
+    height: 48px;
+    --el-alert-title-with-description-font-size: 42px;
+    font-weight: bold;
+}
+.el-alert__description {
+    --el-alert-description-font-size: 18px;
+}
+
+/* .el-form 공통양식 */
+.el-form .el-form-item__label {
+    font-size: 16px;
+    color: var(--text-color-black);
+}
+.el-form .el-form-item__label:before {
+    margin-left: -12px;
+}
+.el-form .el-form-item__error {
+    font-size: 10px;
+}
+
+/* .el-upload 공통양식 */
+.el-upload-list__item .el-icon--close {
+    right: 0;
+}
+.el-upload-list__item .el-upload-list__item-file-name {
+    text-overflow: unset;
+}
+
+/* .el-drawer 공통양식 */
+.el-drawer .el-drawer__body {
+    --el-drawer-padding-primary: 0;
+}
+/* .el-pager  pagination 공통양식 */
+.el-pager li.is-active {
+    background-color: var(--pager-active-bg-color) !important;
+    color: var(--pager-active-text-color) !important;
+    font-weight: 500 !important;
+}
+/* .el-input 공통양식 */
+.el-input__suffix {
+    margin-left: -22px;
+}
+.el-tree {
+    --el-tree-text-color: var(--text-color-black) !important;
+}
+/* .el-message-box 공통양식 */
+.el-message-box{
+    --el-messagebox-width: 500px !important;
+    // max-width: 450px !important;
+}
+/* .el-descriptions 공통양식 */
+.el-descriptions,
+.el-descriptions__body,
+.el-descriptions__table {
+    height: 100%;
+}
+.el-descriptions__label.el-descriptions__cell.is-bordered-label {
+    --el-descriptions-item-bordered-label-background: var(--color-gray-lighter);
+    font-weight: normal !important;
+}
+.el-descriptions__body .el-descriptions__table .el-descriptions__cell{
+    color: var(--text-color-black) !important;
+}
+/* .el-tabs 공통양식 */
+.el-tabs__header {
+    background-color: var(--tabs-header-bg-color) !important;
+    .el-tabs__item {
+        font-weight: 700;
+    }
+}
+/* 기타  공통양식 */
+// 로그인 페이지 input 내 간격 조정
+.login .el-input__wrapper .el-input__suffix {
+    margin-left: 0;
+}
+.login .el-input__wrapper .el-input__inner {
+    padding: 0 8px;
+}
+
+.el-popup-parent--hidden {
+    width: 100% !important;
+}
+.empty-image {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+.detail-content {
+    flex: 1;
+    overflow: scroll;
+    padding: 8px 0;
+    .el-col {
+        height: 100%;
+    }
+}
+.search-box {
+    background-color: var(--searchBox-bg-color) !important;
+}
+.edit-form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.edit-form .el-form-item {
+    width: 48%;
+}
+.one-column {
+    flex-direction: column;
+}
+.one-column .el-form-item {
+    max-width: 600px;
+}
+.switcher {
+    --el-switch-on-color: var(--color-main) !important;
+    --el-switch-off-color: var(--color-main) !important;
+}
+
+*::-webkit-scrollbar {
+    width: 6px;
+    height: 0px;
+    background-color: transparent;
+}
+*::-webkit-scrollbar-thumb {
+    border-radius: 6px;
+    background-color: transparent;
+}
+*:hover::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.262);
+}
+
+@media screen and (max-width: 600px) {
+    .edit-form .el-form-item {
+        width: 100%;
+    }
+}
+
+@media  screen and ( max-width: 450px) {
+    .left-wrapper{
+      position: absolute;
+      z-index: 10;
+      height: 100%;
+    }
+    .contents-wrapper .contents{
+      margin-left: 50px;
+    }
+    .header-right .time{
+      display: none;
+    }
+    .el-page-header{
+      .el-divider, .el-page-header__content, .el-page-header__extra {
+        display: none;
+      }
+    }
+  }

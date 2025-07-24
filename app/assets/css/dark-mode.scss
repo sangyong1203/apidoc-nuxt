@@ -1,0 +1,200 @@
+
+.dark {
+    // --bg-color: #141414;
+    --bg-color: #161616;
+    --bg-color-gray: #202020;
+    --bg-color-gray-dark: #0c0c0c;
+    --border-color: #2d2d2d !important;
+    
+    /* 보드 설정 변수 */
+    $border: 1px solid var(--border-color) !important;
+
+    /*-------기능별 컬러 설정-------*/
+    /*주요색상*/
+    --primary-text-color: #dbdbdb !important;
+
+    /* 사용자 매인 페이지 바탕 컬러 설정 */
+    --main-page-bg-color: var(--bg-color);
+
+    /* 기능 역할별 컬러 설정  */
+    --label-text-color: var(--primary-text-color);
+    --table-header-text-color: var(--primary-text-color);
+
+    --el-table-tr-bg-color: var(--bg-color) !important;
+    --el-text-color-regular: var(--primary-text-color) !important;
+
+    --text-color-black: var(--primary-text-color) !important;
+    .code-block{
+        border: $border;
+    }
+    .page-header.el-page-header {
+        // background-color: transparent;
+        background-color: var(--bg-color) ;
+        box-shadow: none;
+        // border: $border;
+
+        div,
+        span {
+            color: var(--primary-text-color);
+        }
+    }
+    .contents .page-body {
+        background-color: var(--bg-color) ;
+        box-shadow: none;
+
+    }
+    .contents-wrapper .contents {
+        background-color: var(--bg-color-gray-dark);
+    }
+    .tab-content{
+        background-color: transparent !important;
+    }
+    .schedule-status, .device-status-row{
+        .row-label, .row-label-textarea {
+            background-color: transparent !important;
+        }
+    }
+    .title-divider{
+        border-bottom: $border;
+    }
+    .search-box {
+        background-color: var(--bg-color-gray) !important;
+        border: $border;
+    }
+    .extra-row{
+        border-bottom: $border;
+    }
+    .el-table__cell {
+        color: var(--primary-text-color);
+        background-color: var(--bg-color) !important;
+    }
+    .el-table__header th {
+        color: var(--primary-text-color);
+    }
+    .el-table th.el-table__cell {
+        background-color: var(--bg-color) !important;
+    }
+
+    .el-table.no-border {
+        --el-table-border-color: transparent;
+        .el-table__cell {
+            border-bottom: $border;
+        }
+    }
+    .el-tabs--border-card, 
+    .el-tabs--border-card .el-tabs__item.is-active{
+        background-color: var(--bg-color) !important;
+    }
+    .el-tabs__header{
+        background-color: var(--bg-color) !important;
+    }
+
+    .el-tabs__item.is-active, .el-tabs__item:hover {
+        color: var(--primary-color) !important;
+    }
+    .el-tabs__active-bar{
+        background-color: var(--primary-color) !important;
+    }
+    .tui-grid-layer-state{
+        background-color: var(--bg-color) !important;
+    }
+    .tui-grid-container{
+        border-left: $border !important;
+    }
+    .tui-grid-cell-header, .tui-grid-table, .tui-grid-scrollbar-right-top{
+        border-right: transparent !important;
+        border-left: transparent !important;
+    }
+    .tui-grid-cell-header, .tui-grid-scrollbar-right-top{
+        background-color: white !important;
+    }
+    .tui-grid-header-area, .tui-grid-table, .tui-grid-content-area, .tui-grid-cell, .tui-grid-border-line-top, .tui-grid-border-line-bottom, .tui-grid-scrollbar-right-top, .tui-grid-scrollbar-right-bottom{
+        border-color: var(--border-color) !important;
+        border-top: none !important;
+    }
+    .tui-grid-table .tui-grid-cell, .tui-grid-body-area, .tui-grid-rside-area, .tui-grid-scrollbar-right-top, .tui-grid-scrollbar-right-bottom{
+        color: var(--primary-text-color);
+        background-color: var(--bg-color) !important;
+        border-color: var(--border-color);
+    }
+
+    .imageUpload, .detail-info-text {
+        border: $border;
+    }
+    /*-----------------------------------------*/
+
+    .el-dialog .detail{
+        background-color: transparent !important;
+    }
+    .el-dialog__footer {
+        border-top: $border;
+    }
+    .el-dialog .detail-info-text, .el-dialog .imageUpload{
+        border-color: var(--border-color);
+    }
+    .el-dialog .dialog-description, 
+    .detail .detail-title .detail-description{
+        color: #d3d3d3 ;
+    }
+    /* .el-button 공통양식 */
+    .el-button {
+        padding: 8px 16px 10px 16px !important;
+        line-height: normal !important;
+    }
+
+    .el-button--info.is-plain{
+        --el-button-text-color: #dbdbdb;
+    }
+    .el-button--primary.is-disabled {
+        --el-button-disabled-bg-color: var(--primary-color);
+        --el-button-disabled-border-color: #eeeeee;
+        --el-button-disabled-text-color: var(--color-gray);
+    }
+
+    .el-descriptions__label.el-descriptions__cell.is-bordered-label {
+        --el-descriptions-item-bordered-label-background: var(--bg-color);
+    }
+    .el-radio.is-bordered.is-checked .el-radio__label{
+        color: black !important;
+    }
+
+
+
+    /* 기타  공통양식 */
+
+    *::-webkit-scrollbar {
+        width: 6px;
+        height: 0px;
+        background-color: transparent !important;
+    }
+    *::-webkit-scrollbar-thumb {
+        border-radius: 6px;
+        background-color: transparent;
+    }
+    *:hover::-webkit-scrollbar-thumb {
+        background-color: rgba(54, 54, 54, 0.262);
+    }
+
+    .menu-contents{
+        border: $border;
+    }
+    .menu-header{
+        border-bottom: $border;
+
+    }
+    .statistics-item{
+        background-color: var(--bg-color-gray) !important;
+    }
+    .chart-box{
+        border: $border;
+        color: var(--primary-text-color)
+    }
+
+    .menu-bar{
+        background: black;
+    }
+
+    .section-left .device-item{
+        background-color: var(--bg-color-gray) !important;
+    }
+}
